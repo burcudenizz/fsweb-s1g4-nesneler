@@ -15,8 +15,12 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(){
+	const returningObject = {};
+	const keyCollection = ["isim","fiyat","kategori"];
+	for(let i=0; i<arguments.length; i++)
+		returningObject[keyCollection[i]] = arguments[i];
+	return returningObject;
 }
 
 
@@ -31,7 +35,7 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
 
-
+console.log(MenuElemaniOlustur("Turk kahvesi",35,"Sıcak içecekler"));
 
 /* Görev 2: 
 	Özel bir öğle yemeği yiyorsun! Öğretmen ve öğrencilere %25, diğer kişilere %10 indirim var. Aşağıdaki burger nesnesine, indirimi fiyatı otomatik olarak hesaplayan bir metot ekleyin.
@@ -47,11 +51,20 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 
 
 const burger = {
-	isim: "Burger", 
-	fiyat: 18, 
-	kategori: "Öğle Yemeği", 
+    isim: "Burger", 
+    fiyat: 18, 
+    kategori: "Öğle Yemeği", 
+    indirim: function(profilArray){
 
+ profilArray = ["öğretmen", "öğrenci", "diğer"];
+if(profilArray === "öğretmen" || "öğrenci"){
+    return this.fiyat * 0.75;
+} else if(profilArray === "diğer"){
+    return this.fiyat * 0.9;
+    }
 }
+}
+burger.indirim("öğretmen");
 
 
 
@@ -94,8 +107,12 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
+function DegerledirmeEkle(commentArray, name, point, comments){
+	let newObject = {
+		name : 
+		point:
+		comments:
+	}
 	
 }
 
