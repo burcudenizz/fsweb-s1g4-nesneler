@@ -56,17 +56,17 @@ const burger = {
     isim: "Burger", 
     fiyat: 18, 
     kategori: "Öğle Yemeği", 
-    indirim: function(profilArray){
+    indirim: function(profilePrice){
+        if (profilePrice === 'öğretmen'){
+            return this.fiyat*0.75 
+        } else if (profilePrice === 'öğrenci'){
+            return this.fiyat*0.75 
+        } else if (profilePrice === 'diğer'){
+            return this.fiyat*0.90 
+        }
 
- profilArray = ["öğretmen", "öğrenci", "diğer"];
-if(profilArray === "öğretmen" || "öğrenci"){
-    return this.fiyat * 0.75;
-} else if(profilArray === "diğer"){
-    return this.fiyat * 0.9;
-    }
+    } 
 }
-}
-burger.indirim("öğretmen");
 
 
 
