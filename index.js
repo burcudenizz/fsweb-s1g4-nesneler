@@ -182,8 +182,15 @@ function SonDegerlendirmeyiAl(arraySample) {
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
-    /* Kodlar buraya */
+function PuanaGoreDegerlendirmeAl(newArray, puan) {
+	
+	let yenidizi = [];
+	for(let i = 0; i<newArray.length; i++){
+		if(Math.floor(newArray[i].puan) === puan){
+			yenidizi.push(newArray[i]);
+		}
+	}
+    return yenidizi;
 }
 
 
@@ -194,9 +201,17 @@ function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
 	
 */
 
-function UzunDegerlendirmeleriAl(/* Kodlar buraya */) {
+function UzunDegerlendirmeleriAl(arraySomeof) {
     /* Kodlar buraya */
+	let sonucDizi =[];
+	for(let i = 0; i<arraySomeof.length; i++){
+		if(arraySomeof[i].geribildirim.split(" ").length > 15 ){
+			sonucDizi.push(arraySomeof[i]);
+		}
+	}
+    return sonucDizi;
 }
+
 
 
 /*  BONUS 3:  
@@ -217,10 +232,18 @@ function UzunDegerlendirmeleriAl(/* Kodlar buraya */) {
 */
 
 
-function arabaYapici(/* Kodlar buraya */) {
+function arabaYapici(kmSayacı) {
     /* Kodlar buraya */
-    
+    let arabaObject = {
+		sayac : kmSayacı,
+		surus : function(kmMiktari){
+			this.sayac = this.sayac + kmMiktari;
+			return this.sayac;
+	}
 }
+return arabaObject;
+}
+
 
 
 /*  Buradan aşağıdaki kodları değiştirmeyin lütfen */
