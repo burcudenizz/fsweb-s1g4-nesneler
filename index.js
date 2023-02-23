@@ -157,6 +157,11 @@ console.log(AnahtardanDegerlendirmeAl(degerlendirmeler,0));
 
 function SonDegerlendirmeyiAl(arraySample) {
 	/*Kodlar buraya*/
+	const choosenArray = arraySample[arraySample.length - 1];
+	let perName =  arraySample[arraySample.length - 1].isim;
+	let perPoint =  arraySample[arraySample.length - 1].puan;
+	let perFeedback =  arraySample[arraySample.length - 1].geribildirim;
+	return perName + " isimli kişi " + perPoint + " puan verdi ve şunları yazdı: " + perFeedback; 
 } 
 
 
