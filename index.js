@@ -15,14 +15,16 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(){
-	const returningObject = {};
-	const keyCollection = ["isim","fiyat","kategori"];
-	for(let i=0; i<arguments.length; i++)
-		returningObject[keyCollection[i]] = arguments[i];
-	return returningObject;
+function MenuElemaniOlustur(foodName, foodPrice, foodType){
+    const presentedMenu = {
+        isim: foodName,
+        fiyat: foodPrice,
+        kategori: foodType
+    }
+    return presentedMenu;
 }
 
+console.log(MenuElemaniOlustur("Cheeseburger", 8, "Burgerler"));
 
 
 /*  Görev 1b (otomatik test yok): 
@@ -107,14 +109,15 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(commentArray, name, point, comments){
+function DegerledirmeEkle(commentArray, personName, personPoint, personComments){
 	let newObject = {
-		name : 
-		point:
-		comments:
+		isim : personName,
+		puan: personPoint,
+		geribildirim: personComments
 	}
-	
-}
+	commentArray.push(newObject);
+	return commentArray;
+} 
 
 
 
@@ -129,12 +132,15 @@ function DegerledirmeEkle(commentArray, name, point, comments){
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
+function AnahtardanDegerlendirmeAl(oneArray,oneElement) {
 	/*Kodlar buraya*/
 
-}
-
-
+	let perName =  oneArray[oneElement].isim;
+	let perPoint =  oneArray[oneElement].puan;
+	let perFeedback =  oneArray[oneElement].geribildirim;
+	return perName + " isimli kişi " + perPoint + " puan verdi ve şunları yazdı: " + perFeedback; 
+} 
+console.log(AnahtardanDegerlendirmeAl(degerlendirmeler,0));
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
@@ -149,7 +155,7 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 */
 
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
+function SonDegerlendirmeyiAl(arraySample) {
 	/*Kodlar buraya*/
 } 
 
